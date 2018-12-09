@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script|Work+Sans);
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+header {
+  position: relative;
+  background: linear-gradient(rgba(53, 57, 65, 0.3), rgba(0, 0, 0, 0)),
+    url("/client/images/header.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-attachment: center center;
+  box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.3);
+}
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: max-content;
+  background: linear-gradient(rgba(53, 57, 65, 0.8), rgba(0, 0, 0, 0));
+  display: flex;
+  align-items: center;
+}
+nav h1 {
+  font-size: 35px;
+  font-weight: 200;
+  color: #fff;
+  margin-left: 30px;
+  font-family: Dancing Script, sans-serif;
+}
+nav ul {
+  list-style: none;
+  margin: auto 30px auto auto;
+}
+nav ul li {
+  display: inline-block;
+  margin: auto 15px;
+  font-size: 20px;
+  font-family: work Sans, sans-serif;
+}
+nav ul li a {
+  padding: 15px 15px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+}
+nav ul li a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  opacity: 0;
+  height: 100%;
+  border-bottom: 2px solid #fff;
+  transition: 0.3s ease-in-out;
+}
+nav ul li a:hover::before {
+  opacity: 1;
+  width: calc(100% + 10px);
+  transition: 0.3s ease-in-out;
+}
+
+nav ul li button {
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  padding: 15px 30px;
+  background-color: transparent;
+  border: #fff solid 2px;
+  border-radius: 5px;
+}
+nav ul li button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.header_text {
+  text-align: center;
+  padding-top: 30vh;
+}
+.header_text h2 {
+  font-family: Dancing Script, sans-serif;
+  font-size: 90px;
+  color: #fff;
+  font-weight: lighter;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  text-transform: capitalize;
+}
+.header_text h3 {
+  position: relative;
+  top: -30px;
+  font-size: 16px;
+  color: #fff;
+  font-family: Work Sans, sans-serif;
+}
+.header_text_center::before,
+.header_text_center::after {
+  display: inline-block;
+  content: "";
+  width: 5px;
+  height: 2px;
+  background: #fff;
+  margin: 4px;
+}

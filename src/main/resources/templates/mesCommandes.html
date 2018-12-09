@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>commande client</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../static/client/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/client/tables/perfect-scrollbar/perfect-scrollbar.css" th:href="@{/client/tables/perfect-scrollbar/perfect-scrollbar.css}" />
+<!--===============================================================================================-->
+
+	<link rel="stylesheet" type="text/css" media="screen" href="../static/client/css/ClientAnnonce.css" th:href="@{/client/css/ClientAnnonce.css}" />
+	<!-- <link rel="stylesheet" href="../static/client/assets/bootstrap/css/bootstrap.min.css" th:href="@{/client/assets/bootstrap/css/bootstrap.min.css}"> -->
+        <link rel="stylesheet" href="../static/client/assets/css/animate.css" th:href="@{/client/assets/css/animate.css}">
+        <link rel="stylesheet" href="../static/client/assets/css/style.css" th:href="@{/client/assets/css/style.css}">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<style type="text/css">
+ @import url(https://fonts.googleapis.com/css?family=Dancing+Script|Work+Sans);
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+  
+  
+}
+       .navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+ .container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(53, 57, 65, 0.3), rgba(0, 0, 0, 0)),
+    url("/client/images/hhh.jpg") no-repeat;
+    background-size: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+} 
+ul,li{
+   
+       margin-left: 16px;
+}
+li{
+    list-style-type:none;
+}
+
+.titre{
+
+ }
+
+footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', sans-serif; }
+.footer-col { margin-top:50px; }
+.logofooter { margin-bottom:10px; font-size:25px; color:#d9d6d8; font-weight:700;}
+
+.footer-col p { color:#888888; font-size:12px; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
+.footer-col p i { width:20px; color:#999;}
+
+.footer-ul { list-style-type:none;  padding-left:0; margin-left:2px;}
+.footer-ul li { line-height:29px; font-size:12px;}
+.footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+.footer-ul i { margin-right:10px;}
+.footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+
+ .copyright { min-height:40px; background-color:#000000;margin-top: -15px;}
+ .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0;}
+ .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
+ .post p { font-size:12px; color:#FFF; line-height:20px;}
+ .post p span { display:block; color:#8f8f8f;}
+ .bottom_ul { list-style-type:none; float:right; margin-bottom:0;}
+ .bottom_ul li { float:left; line-height:40px;}
+ .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
+ .bottom_ul li a { color:#FFF;  font-size:12px;}
+.social-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    background-color: blue;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
+    padding-top: 7px;
+    border-radius: 50%;
+}
+ .footer-social li{
+     float:left;
+ }
+ .linked-in{
+     background-color:#007bb6;
+ }
+ .facebook{
+     background-color:#3b5998;
+ }
+ .twitter{
+     background-color:#1da1f2;
+ }
+ .google{
+     background-color:#f63e28;
+ }
+
+</style>
+</head>
+<body>   
+	<header>
+       <div class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #275594;">
+    <div class="container"> 
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+       <div class="titre"> <a  th:href="@{ClientsIndex}" class="navbar-brand" style="color: #fff;">Mi cassa</a></div> 
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" th:if="${isConnecte  eq true}" >
+                <li><a href="#"></a></li>
+						<li>
+                   <a  th:href="@{addAnnonce}" style="color: #fff;">ajouter annonce</a>
+                </li>
+                <li>
+                    <a  th:href="@{MesAnnoces}" style="color: #fff;">mes annonces</a>
+                </li>
+                <li>
+                    <a  th:href="@{mesCommandes}" style="color: #fff;">mes commandes</a>
+                </li>
+                <li>
+                       <a th:href="@{Contactus}" style="color: #fff;">contact nous</a>
+                </li>
+                <li>
+                    <li><a th:href="@{aboutus}" style="color: #fff;">qui somme nous</a></li>
+                
+             </ul>
+                 <ul class="nav navbar-nav" th:if="${isConnecte eq false}">
+                  <li><a href="#"></a></li>
+                   <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                     <li><a href="#"></a></li>
+						<li>   <a th:href="@{Contactus}" style="color: #fff;">contact nous</a></li>
+            	       <li><a th:href="@{aboutus}" style="color: #fff;">qui somme nous</a></li>
+            	        
+					</ul>
+            <ul class="nav navbar-nav navbar-right" th:if="${isConnecte  eq true}">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span  style="color: #fff;" class="glyphicon glyphicon-user"></span> 
+                        <strong style="color: #fff;" th:text="${UserConnecter.identifiant}"></strong>
+                        <span  style="color: #fff;"class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu" th:if="${isConnecte  eq true}">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                  <span> <img  th:src="@{getpictureClient(id=${UserConnecter.userId})}" alt="John Doe" /></span>
+                                        
+                                    </div>
+                                    <div class="col-lg-8">
+                                        
+                                        <p class="text-left">
+                                            <a th:if="${isConnecte eq true}"  th:href="@{logoutClient}" class="btn btn-primary btn-block btn-sm">logout</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+            </ul>
+              <ul class="nav navbar-nav navbar-right" th:if="${isConnecte eq false}">
+                <li >
+                    <a th:if="${isConnecte eq false}" th:href="@{login}" >
+                      
+                        <strong>Connexion </strong>
+                       
+                    </a>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    </header>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">ID du Commande</th>
+									<th class="cell100 column2">email du client</th>
+									<th class="cell100 column3">Date du commande</th>
+									<th class="cell100 column4">Status</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<tr class="row100 body" th:each="e:${commande}" >
+									<td class="cell100 column1" th:text="${e.commandeId}"></td>
+									<td class="cell100 column2" th:text="${e.EmailClient}"></td>
+									<td class="cell100 column3" th:text="${e.commandeDate}"> </td>
+									<td class="cell100 column4"> <span th:class="${e.status} ? 'label label-success' : 'label label-danger'" 
+						        th:text="${e.status}?  valider : NonValider">
+						    </span>
+						</td>
+									
+								</tr>
+                              
+
+								
+														</tbody>
+						</table>
+					</div>
+				</div>
+				</div></div></div>
+				
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 footer-col">
+        <div class="logofooter"> Qui Sommes Nous</div>
+        <p>Notre agence  vous accompagne et vous conseille pour la réussite de votre projetaboutus immobilier.</p>
+        <p><i class="fa fa-map-pin"></i> </p>
+        <p><i class="fa fa-phone"></i> Phone  : +212 6 36 23 62 77</p>
+        <p><i class="fa fa-envelope"></i> E-mail : maKhlouf.aouatif@gmail.com</p>
+        
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">Liens</h6>
+        <ul class="footer-ul" th:if="${isConnecte  eq true}">
+          <li>
+                   <a  th:href="@{addAnnonce}">ajouter annonce</a>
+                </li>
+                <li>
+                    <a  th:href="@{MesAnnoces}">mes annonces</a>
+                </li>
+                <li>
+                    <a  th:href="@{mesCommandes}">mes commandes</a>
+                </li>
+                <li>
+                       <a th:href="@{Contactus}">contacts</a>
+                </li>
+                <li>
+                  <li><a th:href="@{aboutus}">about us</a></li>
+                  
+        </ul>
+        <ul class="footer-ul" th:if="${isConnecte eq false}">
+        	             <li><a th:href="@{Contactus}">contacts</a></li>
+            	         <li><a th:href="@{aboutus}">about us</a></li>
+            	     </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">les derniers posts</h6>
+        <div class="post" th:each="an :${AnnonceClient}">
+          <span th:text="${an.title}"></span>,<span th:text="${an.type}"></span>
+         
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 footer-col">
+        <h6 class="heading7">Social Media</h6>
+        <ul class="footer-social">
+          <li><i class="fa fa-linkedin social-icon linked-in" aria-hidden="true"></i></li>
+          <li><i class="fa fa-facebook social-icon facebook" aria-hidden="true"></i></li>
+          <li><i class="fa fa-twitter social-icon twitter" aria-hidden="true"></i></li>
+          <li><i class="fa fa-google-plus social-icon google" aria-hidden="true"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--footer start from here-->
+
+<div class="copyright">
+  <div class="container">
+    <div class="col-md-6">
+      <p>© 2018 - All Rights reserver</p>
+    </div>
+    
+  </div>
+</div>
+				
+<!-- <script src="../client/assets/js/jquery-1.11.1.min.js" th:href="@{/client/assets/js/jquery-1.11.1.min.js}"></script>
+        <script src="../client/assets/bootstrap/js/bootstrap.min.js" th:href="@{/client/assets/bootstrap/js/bootstrap.min.js}"></script>
+ -->        <script src="../client/assets/js/jquery.backstretch.min.js" th:href="@{/client/assets/js/jquery.backstretch.min.js}"></script>
+        <script src="../client/assets/js/wow.min.js" th:href="@{/client/assets/js/wow.min.js}"></script>
+        <script src="../client/assets/js/retina-1.1.0.min.js" th:href="@{/client/assets/js/retina-1.1.0.min.js}"></script>
+        <script src="../client/assets/js/scripts.js" th:href="@{/client/assets/js/scripts.js}"></script>	
+
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Title Page-->
+    <title>ajouter annonce</title>
+
+   <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="../static/admin/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/font-awesome-4.7/css/font-awesome.min.css}">
+    <link href="../static/admin/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/font-awesome-5/css/fontawesome-all.min.css}">
+    <link href="../static/admin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/mdi-font/css/material-design-iconic-font.min.css}">
+
+    <!-- Bootstrap CSS-->
+    <link href="../static/admin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor//bootstrap-4.1/bootstrap.min.css}">
+
+    <!-- Vendor CSS-->
+    <link href="../static/admin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/animsition/animsition.min.css}">
+    <link href="../static/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css}">
+    <link href="../static/admin/vendor/wow/animate.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/wow/animate.css}">
+    <link href="../static/admin/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/css-hamburgers/hamburgers.min.css}">
+    <link href="../static/admin/vendor/slick/slick.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/slick/slick.css}">
+    <link href="../static/admin/vendor/select2/select2.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/select2/select2.min.css}">
+    <link href="../static/admin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/perfect-scrollbar/perfect-scrollbar.css}">
+
+    <!-- Main CSS-->
+    <link href="../static/admin/css/theme.css" rel="stylesheet" media="all" th:href="@{/admin/css/theme.css}">
+
+
+
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" th:href="@{/Admin/adminIndex}">
+                            <img src="/admin/images/icon/logot.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+      <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo" style="background-color:#4b8fd0; ">
+               <a th:href="@{/Admin/adminIndex}">
+                            <img src="/admin/images/icon/logot.png" alt="CoolAdmin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1" style="background-color:#a9d6ff; ">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                       <li class="has-sub">
+                            <a class="js-arrow" th:href="@{adminIndex}">
+                                <i class="fas fa-tachometer-alt"></i>Accueil</a>
+                            
+                        </li>
+                       
+                        <li>
+                            <a th:href="@{Index}">
+                                <i class="fas fa-table"></i>mes clients</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../ArticleAdmin}">
+                                <i class="fas fa-table"></i>mes Articles</a>
+                        </li>
+                       <li>
+                            <a th:href="@{../ArticleClient}">
+                                <i class="fas fa-table"></i>les Articles des clients</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../tableCommandeAdmin}">
+                                <i class="fas fa-table"></i> les commandes </a>
+                        </li>
+                          <li>
+                            <a th:href="@{../AnnonceAdmin}">
+                                <i class="far fa-check-square"></i>ajouter annonce</a>
+                        </li>
+                     
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop" style="background-color:#4b8fd0; ">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                   
+                                    
+                                    
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img th:src="@{getpictureClient(id=${UserConnecter.userId})}" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#" th:text="${UserConnecter.identifiant}"></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img th:src="@{getpictureClient(id=${UserConnecter.userId})}" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#" th:text="${UserConnecter.identifiant}"></a>
+                                                    </h5>
+                                                    <span class="email" th:text="${UserConnecter.email}"></span>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="account-dropdown__footer">
+                                                <a th:href="@{../logout}">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content" style="background-image: url('/admin/ima.jpg');background-size: cover;">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="card">
+                                    <div class="card-header">annonce</div>
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center title-2">ajouter nouveau annonce</h3>
+                                        </div>
+                                        <hr>
+
+ <form th:action="@{SaveAnnoce}" th:object="${Annonce}" method="post" enctype="multipart/form-data" data-parsley-validate="" >
+  
+                                       
+                                            <div class="form-group">
+                                                <label for="name" class="control-label mb-1">Titre *</label>
+                                                <input id="name" th:field="*{title}" type="text" class="form-control" aria-required="true" >
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <label for="description" class="control-label mb-1">description :</label>
+                                                <input id="description" type="text" th:field="*{description}" class="form-control cc-name valid" data-val="true" >
+                                                
+                                            </div>
+                                           
+                                             <div class="form-group">
+                                                <label for="price" class="control-label mb-1">price</label>
+                                                <input id="price" type="text" th:field="*{price}" class="form-control cc-number identified visa" >
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                              <div class="form-group">
+                                                <label for="surface" class="control-label mb-1">Surface</label>
+                                                <input id="surface" type="text" th:field="*{surface}" class="form-control cc-number identified visa" >
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="etage" class="control-label mb-1">Etage</label>
+                                                <input id="etage" type="text" th:field="*{etage}" class="form-control cc-number identified visa" >
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Type de l'annonce</label>
+                                                <select name="type"  class="form-control cc-number identified visa" >
+                                               <option value="SALE">Vente</option>
+                                               <option value="RENT">Location</option>
+                                            </select>
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                             <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">ASCENSEUR</label>
+                                                <select name="ascenseur"  class="form-control cc-number identified visa" >
+                                              <option value="OUI">Oui</option>
+                                             <option value="NON">Non</option>
+                                            </select>
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1">Type de Bien</label>
+                                                <select name="category"  class="form-control cc-number identified visa" >
+                                              <option value="VILLA">VILLA</option>
+                                               <option value="APPARTEMENT">APPARTEMENT</option>
+                                               <option value="HOUSE">Maison</option>
+                                               <option value="TERRAIN">TERRAIN</option>
+                                            </select>
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <input class="btn form-control fileinput-button" type="file" id="file" name="annonceImage" accept="image/x-png,image/gif,image/jpeg" multiple="multiple">
+                                           
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block" onclick="return validateForm();">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">ajouter</span>
+                                                    
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    </div>
+<script >
+ 
+ function validateForm(){
+	 var name     = document.getElementById('name');
+	 var price     = document.getElementById('price');
+	 var surface = document.getElementById('surface');
+	 var description = document.getElementById('description');
+	 var file     = document.getElementById('file');
+ if(name.value == ""){
+	 swal("Oops!", "Entrer la titre du l'annonce ", "error");
+	 return false;
+ }
+ if(description.value == ""){
+	 swal("Oops!", "Entrer description de bien", "error");
+	 return false;
+ }
+
+ if(price.value == "" &&  $.isNumeric(price)){
+	 swal("Oops!", "Entrer le prix de bien", "error");
+	 return false;
+ }
+ 
+ if(surface.value == ""){
+	 swal("Oops!", "Entrer surface de bien", "error");
+	 return false;
+ }
+ 
+ if(file.value == ""){ 
+	 swal("Oops!", "Entrer image de annonce", "error");
+	 return false;
+ }
+ return( true );
+ }
+
+</script>
+    <!-- Jquery JS-->
+     <script src="../admin/vendor/jquery-3.2.1.min.js" th:href="@{/admin/vendor/jquery-3.2.1.min.js}"></script>
+    <!-- Bootstrap JS-->
+    <script src="../admin/vendor/bootstrap-4.1/popper.min.js" th:href="@{/admin/vendor/bootstrap-4.1/popper.min.js}"></script>
+    <script src="../admin/vendor/bootstrap-4.1/bootstrap.min.js" th:href="@{/admin/vendor/bootstrap-4.1/bootstrap.min.js}"></script>
+    <!-- Vendor JS       -->
+    <script src="../admin/vendor/slick/slick.min.js" th:href="@{/admin/vendor/slick/slick.min.js}">
+    </script>
+    <script src="../admin/vendor/wow/wow.min.js" th:href="@{/admin/vendor/wow/wow.min.js}"></script>
+    <script src="../admin/vendor/animsition/animsition.min.js" th:href="@{/admin/vendor/animsition/animsition.min.js}"></script>
+    <script src="../admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js" th:href="@{/admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js}">
+    </script>
+    <script src="../admin/vendor/counter-up/jquery.waypoints.min.js" th:href="@{/admin/vendor/counter-up/jquery.waypoints.min.js}"></script>
+    <script src="../admin/vendor/counter-up/jquery.counterup.min.js" th:href="@{/admin/vendor/counter-up/jquery.counterup.min.js}">
+    </script>
+    <script src="../admin/vendor/circle-progress/circle-progress.min.js" th:href="@{/admin/vendor/circle-progress/circle-progress.min.js}"></script>
+    <script src="../admin/vendor/perfect-scrollbar/perfect-scrollbar.js" th:href="@{/admin/vendor/perfect-scrollbar/perfect-scrollbar.js}"></script>
+    <script src="../admin/vendor/chartjs/Chart.bundle.min.js" th:href="@{/admin/vendor/chartjs/Chart.bundle.min.js}"></script>
+    <script src="../admin/vendor/select2/select2.min.js" th:href="@{/admin/vendor/select2/select2.min.js}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="../admin/js/main.js" th:href="@{/admin/js/main.js}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

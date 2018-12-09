@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Title Page-->
+    <title>Tables</title>
+
+   <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="../static/admin/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/font-awesome-4.7/css/font-awesome.min.css}">
+    <link href="../static/admin/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/font-awesome-5/css/fontawesome-all.min.css}">
+    <link href="../static/admin/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/mdi-font/css/material-design-iconic-font.min.css}">
+
+    <!-- Bootstrap CSS-->
+    <link href="../static/admin/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor//bootstrap-4.1/bootstrap.min.css}">
+
+    <!-- Vendor CSS-->
+    <link href="../static/admin/vendor/animsition/animsition.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/animsition/animsition.min.css}">
+    <link href="../static/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css}">
+    <link href="../static/admin/vendor/wow/animate.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/wow/animate.css}">
+    <link href="../static/admin/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/css-hamburgers/hamburgers.min.css}">
+    <link href="../static/admin/vendor/slick/slick.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/slick/slick.css}">
+    <link href="../static/admin/vendor/select2/select2.min.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/select2/select2.min.css}">
+    <link href="../static/admin/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all" th:href="@{/admin/vendor/perfect-scrollbar/perfect-scrollbar.css}">
+
+    <!-- Main CSS-->
+    <link href="../static/admin/css/theme.css" rel="stylesheet" media="all" th:href="@{/admin/css/theme.css}">
+
+
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                     <a class="logo" th:href="@{/Admin/adminIndex}">
+                            <img src="/admin/images/icon/logot.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" th:href="@{/Admin/adminIndex}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            
+                        </li>
+                       
+                        <li>
+                            <a th:href="@{/Admin/Index}">
+                                <i class="fas fa-table"></i>mes clients</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../ArticleAdmin}">
+                                <i class="fas fa-table"></i>mes Articles</a>
+                        </li>
+                       <li>
+                            <a th:href="@{../ArticleClient}">
+                                <i class="fas fa-table"></i>les Articles des clients</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../tableCommandeAdmin}">
+                                <i class="fas fa-table"></i>mes les commandes des clients</a>
+                        </li>
+                          <li>
+                            <a th:href="@{../AnnonceAdmin}">
+                                <i class="far fa-check-square"></i>ajouter annonce</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                      
+                                </li>
+                            </ul>
+                     
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+       <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo" style="background-color:#4b8fd0; ">
+               <a th:href="@{/Admin/adminIndex}">
+                            <img src="/admin/images/icon/logot.png" alt="CoolAdmin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1" style="background-color:#a9d6ff; ">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                       <li class="has-sub">
+                            <a class="js-arrow" th:href="@{/Admin/adminIndex}">
+                                <i class="fas fa-tachometer-alt"></i>Accueil</a>
+                            
+                        </li>
+                       
+                        <li>
+                            <a th:href="@{/Admin/Index}">
+                                <i class="fas fa-table"></i>mes clients</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../ArticleAdmin}">
+                                <i class="fas fa-table"></i>mes Articles</a>
+                        </li>
+                       <li>
+                            <a th:href="@{../ArticleClient}">
+                                <i class="fas fa-table"></i>les Articles des clients</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../tableCommandeAdmin}">
+                                <i class="fas fa-table"></i> les commandes </a>
+                        </li>
+                          <li>
+                            <a th:href="@{../AnnonceAdmin}">
+                                <i class="far fa-check-square"></i>ajouter annonce</a>
+                        </li>
+                     
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop" style="background-color:#4b8fd0; ">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" id="myInput" name="search" placeholder="chercher" />
+                                
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                   
+                                   
+                                     
+                                </div>
+                             <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img th:src="@{getpictureClient(id=${UserConnecter.userId})}" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#" th:text="${UserConnecter.identifiant}"></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img th:src="@{getpictureClient(id=${UserConnecter.userId})}" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#" th:text="${UserConnecter.identifiant}"></a>
+                                                    </h5>
+                                                    <span class="email" th:text="${UserConnecter.email}"></span>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="account-dropdown__footer">
+                                                <a th:href="@{../logout}">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content" style="background-image: url('/admin/ima.jpg');background-size: cover;">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                             
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+                                        <div class="rs-select2--light rs-select2--md">
+                                            
+                                           
+                                        </div>
+                                        <div class="rs-select2--light rs-select2--sm">
+                                            
+                                        </div>
+                                     
+                                    </div>
+                                    <div class="table-data__tool-right">
+                                       
+                                        <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive table-responsive-data2">
+                                    <table class="table table-data2">
+                                        <thead>
+                                            <tr style="background-color: #63c76a;">
+                                                
+                                           <th>commandeId</th><th>CommandeDate</th><th>EmailClient</th><th>status</th><th>Action</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable">
+                                            <tr class="tr-shadow" th:each="e:${Commandes}" >
+                                                
+                                                <td th:text="${e.commandeId}"></td>
+                                                <td>
+                                                    <span  th:text="${e.commandeDate}"></span>
+                                                </td>
+                                                <td class="desc" th:text="${e.EmailClient}"></td>
+                                                                                           <!--  <td>
+                                                    <span class="status--process">Processed</span>
+                                                </td>-->
+                                               
+                                                <td style="white-space: nowrap">
+                                                <span th:class="${e.status} ? 'label label-success' : 'label label-danger'" 
+                                                    th:text="${e.status}?  valider : NonValider">
+                                                </span>
+                                            </td>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <a th:href="@{ValiderCommande(id=${e.commandeId})}"><button class="item" data-toggle="tooltip" data-placement="top" title="valider">
+                                                            <i class="zmdi zmdi-check"></i>
+                                                            <!-- <input type="hidden" value="${e.idAnnonce}"> -->
+                                                                 </button></a>
+                                                       <a th:href="@{rejetCommande(id=${e.commandeId})}"> <button class="item" data-toggle="tooltip" data-placement="top" title="rejeter">
+                                                            <i class="zmdi zmdi-block"></i> 
+                                                                              
+                                                        </button> </a>
+                                                      
+                                                        
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE -->
+                            </div>
+                        </div>
+                      
+                        
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   <script src="../admin/vendor/jquery-3.2.1.min.js" th:href="@{/admin/vendor/jquery-3.2.1.min.js}"></script>
+    <!-- Bootstrap JS-->
+    <script src="../admin/vendor/bootstrap-4.1/popper.min.js" th:href="@{/admin/vendor/bootstrap-4.1/popper.min.js}"></script>
+    <script src="../admin/vendor/bootstrap-4.1/bootstrap.min.js" th:href="@{/admin/vendor/bootstrap-4.1/bootstrap.min.js}"></script>
+    <!-- Vendor JS       -->
+    <script src="../admin/vendor/slick/slick.min.js" th:href="@{/admin/vendor/slick/slick.min.js}">
+    </script>
+    <script src="../admin/vendor/wow/wow.min.js" th:href="@{/admin/vendor/wow/wow.min.js}"></script>
+    <script src="../admin/vendor/animsition/animsition.min.js" th:href="@{/admin/vendor/animsition/animsition.min.js}"></script>
+    <script src="../admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js" th:href="@{/admin/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js}">
+    </script>
+    <script src="../admin/vendor/counter-up/jquery.waypoints.min.js" th:href="@{/admin/vendor/counter-up/jquery.waypoints.min.js}"></script>
+    <script src="../admin/vendor/counter-up/jquery.counterup.min.js" th:href="@{/admin/vendor/counter-up/jquery.counterup.min.js}">
+    </script>
+    <script src="../admin/vendor/circle-progress/circle-progress.min.js" th:href="@{/admin/vendor/circle-progress/circle-progress.min.js}"></script>
+    <script src="../admin/vendor/perfect-scrollbar/perfect-scrollbar.js" th:href="@{/admin/vendor/perfect-scrollbar/perfect-scrollbar.js}"></script>
+    <script src="../admin/vendor/chartjs/Chart.bundle.min.js" th:href="@{/admin/vendor/chartjs/Chart.bundle.min.js}"></script>
+    <script src="../admin/vendor/select2/select2.min.js" th:href="@{/admin/vendor/select2/select2.min.js}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="../admin/js/main.js" th:href="@{/admin/js/main.js}"></script>
+</body>
+
+</html>
+<!-- end document-->
